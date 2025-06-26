@@ -1,1 +1,6 @@
 Profile.pdf
+.env
+venv/
+**.swp
+.devbox
+photos/
