@@ -7,16 +7,27 @@ document.addEventListener('DOMContentLoaded', () => {
     async function loadContent() {
         const response = await fetch('index.json');
         resumeData = await response.json();
-        buildTimeline();
+        // Load photos.json in parallel
+        const photosResponse = await fetch('photos.json');
+        const photosData = await photosResponse.json();
+        buildTimeline(photosData);
     }
 
-    function buildTimeline() {
+    function buildTimeline(photosData) {
         const experiences = resumeData.experience.jobs;
         const projects = resumeData.projects.list;
         allItems = [...experiences, ...projects].sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
 
+        // Prepare photos sorted by created timestamp (ascending)
+        const sortedPhotos = photosData
+            .filter(photo => photo.created)
+            .map(photo => ({ ...photo, createdDate: new Date(photo.created) }))
+            .sort((a, b) => a.createdDate - b.createdDate);
+        console.log(`Total photos loaded: ${sortedPhotos.length}`);
+
         const maxDuration = Math.max(...allItems.map(item => getDurationInMonths(item.startDate, item.endDate)));
 
+        let photoIndex = 0;
         allItems.forEach((item, index) => {
             const duration = getDurationInMonths(item.startDate, item.endDate);
             const height = (duration / maxDuration) * 200 + 100; // Base height + proportional height
@@ -39,8 +50,31 @@ document.addEventListener('DOMContentLoaded', () => {
             logo.src = `logos/${item.company.toLowerCase().replace(/\s/g, '')}.png`; // Placeholder path
             logo.alt = `${item.company} Logo`;
             logo.classList.add('logo');
-            logo.onerror = () => { logo.style.display = 'none'; }; // Hide if logo not found
+            logo.onerror = () => { logo.style.display = 'none'; };
             itemDiv.appendChild(logo);
+
+            // Insert photos that fall within this timeline item's date range
+            const itemStart = new Date(item.startDate);
+            const itemEnd = item.endDate.toLowerCase() === 'present' ? new Date() : new Date(item.endDate);
+            console.log(`Processing item: ${item.title.fr} from ${itemStart} to ${itemEnd}`);
+            // Collect all photos for this item in a row
+            const photosRow = document.createElement('div');
+            photosRow.classList.add('timeline-photos-row');
+            sortedPhotos.forEach(photo => {
+                if (photo.createdDate >= itemStart && photo.createdDate <= itemEnd) {
+                    const photoImg = document.createElement('img');
+                    photoImg.src = `photos/${photo.filename}`;
+                    photoImg.alt = `Photo taken on ${photo.created}`;
+                    photoImg.classList.add('timeline-photo');
+                    // Show full resolution on hover
+                    photoImg.addEventListener('mouseenter', (e) => showFullResHover(photoImg, photo.filename));
+                    photoImg.addEventListener('mouseleave', hideFullResHover);
+                    photosRow.appendChild(photoImg);
+                }
+            });
+            if (photosRow.children.length > 0) {
+                itemDiv.appendChild(photosRow);
+            }
 
             timelineContainer.appendChild(itemDiv);
         });
@@ -95,6 +129,29 @@ document.addEventListener('DOMContentLoaded', () => {
             updateActive(currentIndex - 1);
         }
     });
+
+    // Hover logic for full resolution image
+    let fullResHoverDiv = null;
+    function showFullResHover(targetImg, filename) {
+        hideFullResHover();
+        fullResHoverDiv = document.createElement('div');
+        fullResHoverDiv.className = 'photo-hover-fullres';
+        const img = document.createElement('img');
+        img.src = `photos/${filename}`;
+        img.alt = 'Full size photo';
+        fullResHoverDiv.appendChild(img);
+        document.body.appendChild(fullResHoverDiv);
+        // Position near the hovered image
+        const rect = targetImg.getBoundingClientRect();
+        fullResHoverDiv.style.top = `${rect.top + window.scrollY - 10}px`;
+        fullResHoverDiv.style.left = `${rect.right + 20 + window.scrollX}px`;
+    }
+    function hideFullResHover() {
+        if (fullResHoverDiv) {
+            fullResHoverDiv.remove();
+            fullResHoverDiv = null;
+        }
+    }
 
     loadContent();
 });
