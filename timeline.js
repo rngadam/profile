@@ -14,8 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function buildTimeline(photosData) {
-        const experiences = resumeData.experience.jobs;
-        const projects = resumeData.projects.list;
+        // Add a label to each item to distinguish experience and projects
+        const experiences = resumeData.experience.jobs.map(item => ({ ...item, itemType: 'experience' }));
+        const projects = resumeData.projects.list.map(item => ({ ...item, itemType: 'project' }));
         allItems = [...experiences, ...projects].sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
 
         // Prepare photos sorted by created timestamp (ascending)
@@ -37,39 +38,51 @@ document.addEventListener('DOMContentLoaded', () => {
             itemDiv.style.minHeight = `${height}px`;
             itemDiv.dataset.index = index;
 
+            // Distinguish between experience and project for heading color
             const title = document.createElement('h3');
             title.textContent = item.title.fr; // Default to French for now
+            title.classList.add(item.itemType === 'experience' ? 'timeline-title-experience' : 'timeline-title-project');
             itemDiv.appendChild(title);
 
-            const company = document.createElement('p');
+            const org = document.createElement('p');
             const dates = formatDates(item.startDate, item.endDate, 'fr');
-            company.innerHTML = `<strong>${item.company}</strong> | ${item.location} | ${dates}`;
-            itemDiv.appendChild(company);
+            org.innerHTML = item.organization
+                ? `<strong>${item.organization}</strong> | ${item.location} | ${dates}`
+                : `${item.location} | ${dates}`;
+            itemDiv.appendChild(org);
 
-            const logo = document.createElement('img');
-            logo.src = `logos/${item.company.toLowerCase().replace(/\s/g, '')}.png`; // Placeholder path
-            logo.alt = `${item.company} Logo`;
-            logo.classList.add('logo');
-            logo.onerror = () => { logo.style.display = 'none'; };
-            itemDiv.appendChild(logo);
+            if (item.organization) {
+                const logo = document.createElement('img');
+                logo.src = `logos/${item.organization.toLowerCase().replace(/\s/g, '')}.png`;
+                logo.alt = `${item.organization} Logo`;
+                logo.classList.add('logo');
+                logo.onerror = () => { logo.style.display = 'none'; };
+                itemDiv.appendChild(logo);
+            }
 
-            // Insert photos that fall within this timeline item's date range
+            // Collect all photos for this item in a row
             const itemStart = new Date(item.startDate);
             const itemEnd = item.endDate.toLowerCase() === 'present' ? new Date() : new Date(item.endDate);
-            console.log(`Processing item: ${item.title.fr} from ${itemStart} to ${itemEnd}`);
-            // Collect all photos for this item in a row
             const photosRow = document.createElement('div');
             photosRow.classList.add('timeline-photos-row');
             sortedPhotos.forEach(photo => {
                 if (photo.createdDate >= itemStart && photo.createdDate <= itemEnd) {
+                    const photoContainer = document.createElement('div');
+                    photoContainer.classList.add('timeline-photo-container');
                     const photoImg = document.createElement('img');
                     photoImg.src = `photos/${photo.filename}`;
                     photoImg.alt = `Photo taken on ${photo.created}`;
                     photoImg.classList.add('timeline-photo');
-                    // Show full resolution on hover
+                    // Show full resolution on hover only (no display image)
                     photoImg.addEventListener('mouseenter', (e) => showFullResHover(photoImg, photo.filename));
                     photoImg.addEventListener('mouseleave', hideFullResHover);
-                    photosRow.appendChild(photoImg);
+                    // Display filename at the bottom
+                    const filenameDiv = document.createElement('div');
+                    filenameDiv.classList.add('timeline-photo-filename');
+                    filenameDiv.textContent = photo.filename;
+                    photoContainer.appendChild(photoImg);
+                    photoContainer.appendChild(filenameDiv);
+                    photosRow.appendChild(photoContainer);
                 }
             });
             if (photosRow.children.length > 0) {

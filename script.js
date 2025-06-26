@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const langSelector = document.getElementById('language-selector');
     const themeSelector = document.getElementById('theme-selector');
@@ -82,11 +81,11 @@ document.addEventListener('DOMContentLoaded', () => {
             jobTitle.textContent = job.title[lang];
             jobDiv.appendChild(jobTitle);
 
-            const company = document.createElement('p');
+            const organization = document.createElement('p');
             const duration = calculateDuration(job.startDate, job.endDate, lang);
             const dates = formatDates(job.startDate, job.endDate, lang);
-            company.innerHTML = `<strong>${job.company}</strong> | ${job.location} | ${dates} (${duration})`;
-            jobDiv.appendChild(company);
+            organization.innerHTML = `<strong>${job.organization}</strong> | ${job.location} | ${dates} (${duration})`;
+            jobDiv.appendChild(organization);
 
             const descriptionList = document.createElement('ul');
             job.description[lang].forEach(item => {
@@ -153,11 +152,11 @@ document.addEventListener('DOMContentLoaded', () => {
             projectTitle.textContent = project.title[lang];
             projectDiv.appendChild(projectTitle);
 
-            const company = document.createElement('p');
+            const organization = document.createElement('p');
             const duration = calculateDuration(project.startDate, project.endDate, lang);
             const dates = formatDates(project.startDate, project.endDate, lang);
-            company.innerHTML = `<strong>${project.company}</strong> | ${project.location} | ${dates} (${duration})`;
-            projectDiv.appendChild(company);
+            organization.innerHTML = `<strong>${project.organization}</strong> | ${project.location} | ${dates} (${duration})`;
+            projectDiv.appendChild(organization);
 
             const descriptionList = document.createElement('ul');
             project.description[lang].forEach(item => {

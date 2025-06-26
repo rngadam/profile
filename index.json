@@ -37,54 +37,25 @@
     "jobs": [
       {
         "title": { "fr": "Fondateur & Conseiller Technique Principal", "en": "Founder & Lead Technical Advisor" },
-        "company": "Coderbunker",
-        "location": "Shanghai, Montréal, Québec",
+        "organization": "Coderbunker Shanghai",
+        "location": "Shanghai, China",
         "startDate": "2016-01-01",
-        "endDate": "Present",
+        "endDate": "2019-10-31",
         "description": {
-          "fr": ["Fondateur de Coderbunker, une communauté internationale et une société de conseil en logiciels. J'accompagne les clients dans la réalisation de leurs projets techniques tout en dirigeant le développement commercial et la croissance de l'entreprise à travers différentes phases à Shanghai, Montréal et Québec."],
-          "en": ["Founder of Coderbunker, an international community and software consultancy. I support clients in achieving their technical goals while leading business development and company growth through various phases in Shanghai, Montreal, and Quebec City."]
+          "fr": ["Fondateur de Coderbunker à Shanghai, une communauté internationale et une société de conseil en logiciels. J'ai accompagné les clients dans la réalisation de leurs projets techniques tout en dirigeant le développement commercial et la croissance de l'entreprise à Shanghai."],
+          "en": ["Founder of Coderbunker in Shanghai, an international community and software consultancy. I supported clients in achieving their technical goals while leading business development and company growth in Shanghai."]
         },
         "details": {
-            "fr": ["Expansion de la marque internationale Coderbunker à Montréal. Développement des affaires, croissance numérique et démarrage de l'équipe d'ingénierie pour les entreprises établies.", "Coderbunker est une communauté internationale qui met en relation des freelances talentueux avec des clients. Lancé à Shanghai en janvier 2016 par un ex-Googler comme un espace physique où des programmeurs passionnés viennent apprendre de nouvelles technologies et améliorer leurs compétences. Au fur et à mesure que la communauté s'agrandissait, elle s'est transformée en une communauté de talents en génie logiciel partageant des pistes pour travailler directement avec les clients."],
-            "en": ["Expansion of the international Coderbunker brand to Montreal. Business development, digital growth, and start-up of the engineering team for established companies.", "Coderbunker is an international community that connects talented freelancers with clients. Launched in Shanghai in January 2016 by an ex-Googler as a physical space where passionate programmers come to learn new technologies and improve their skills. As the community grew, it transformed into a community of software engineering talents sharing leads to work directly with clients."]
+            "fr": ["Coderbunker est une communauté internationale qui met en relation des freelances talentueux avec des clients. Lancé à Shanghai en janvier 2016 par un ex-Googler comme un espace physique où des programmeurs passionnés viennent apprendre de nouvelles technologies et améliorer leurs compétences. Au fur et à mesure que la communauté s'agrandissait, elle s'est transformée en une communauté de talents en génie logiciel partageant des pistes pour travailler directement avec les clients."],
+            "en": ["Coderbunker is an international community that connects talented freelancers with clients. Launched in Shanghai in January 2016 by an ex-Googler as a physical space where passionate programmers come to learn new technologies and improve their skills. As the community grew, it transformed into a community of software engineering talents sharing leads to work directly with clients."]
         },
         "clients": [
-          {
-            "client": "Nation Tech",
-            "title": { "fr": "Développeur sénior", "en": "Senior Developer" },
-            "startDate": "2025-02-01",
-            "endDate": "Present",
-            "description": {
-              "fr": ["Développement de technologies de gestion d'infonuage hybride et DevOps."],
-              "en": ["Development of hybrid cloud management and DevOps technologies."]
-            }
-          },
-          {
-            "client": "Northern Block",
-            "title": { "fr": "Conseiller technique", "en": "Technical Advisor" },
-            "startDate": "2024-07-01",
-            "endDate": "2024-09-01",
-            "description": {
-              "fr": ["Services de développement full stack et DevOps dans le domaine de l'identité numérique."],
-              "en": ["Full stack development and DevOps services in the digital identity space."]
-            }
-          },
-          {
-            "client": "E-SMART",
-            "title": { "fr": "Technical Consultant", "en": "Technical Consultant" },
-            "startDate": "2019-11-01",
-            "endDate": "2020-10-01",
-            "description": {
-              "fr": ["Système automatisé de mise à jour du logiciel et du micrologiciel AWS IoT Python pour un appareil IoT automobile, système de construction pour Buildroot, et maintenance de serveur sur AWS/EC2."],
-              "en": ["Automated AWS IoT Python software and firmware update system for an automotive IoT device, build system for Buildroot, and server maintenance on AWS/EC2."]
-            }
-          },
           {
             "client": "Overhand Fitness",
             "title": { "fr": "Software Lead", "en": "Software Lead" },
             "startDate": "2018-11-01",
             "endDate": "2019-07-01",
+            "location": "Shanghai, China",
             "description": {
               "fr": ["Prise en charge et évolution d'un système existant vers un produit prêt pour la production, direction du développement d'une solution B2C et de sa personnalisation pour les salles de sport."],
               "en": ["Took over and evolved an existing system into a production-ready product, led the development of a B2C solution and its customization for gyms."]
@@ -95,6 +66,7 @@
             "title": { "fr": "CTO", "en": "CTO" },
             "startDate": "2017-09-01",
             "endDate": "2019-06-01",
+            "location": "Shanghai, China",
             "description": {
               "fr": ["Recrutement et gestion d'une équipe de développeurs (React, PostgreSQL, Node.js, Python). Direction du développement d'un système de navigation intérieure et d'une communauté gamifiée."],
               "en": ["Recruited and managed a team of developers (React, PostgreSQL, Node.js, Python). Led the development of an indoor navigation system and a gamified community."]
@@ -103,8 +75,58 @@
         ]
       },
       {
+        "title": { "fr": "Fondateur & Conseiller Technique Principal", "en": "Founder & Lead Technical Advisor" },
+        "organization": "Coderbunker Montréal",
+        "location": "Montréal, Québec, Canada",
+        "startDate": "2019-11-01",
+        "endDate": "Present",
+        "description": {
+          "fr": ["Fondateur de Coderbunker à Montréal, expansion de la marque internationale. Développement des affaires, croissance numérique et démarrage de l'équipe d'ingénierie pour les entreprises établies à Montréal et Québec."],
+          "en": ["Founder of Coderbunker in Montreal, expansion of the international brand. Business development, digital growth, and start-up of the engineering team for established companies in Montreal and Quebec."]
+        },
+        "details": {
+            "fr": ["Expansion de la marque internationale Coderbunker à Montréal. Développement des affaires, croissance numérique et démarrage de l'équipe d'ingénierie pour les entreprises établies."],
+            "en": ["Expansion of the international Coderbunker brand to Montreal. Business development, digital growth, and start-up of the engineering team for established companies."]
+        },
+        "clients": [
+          {
+            "client": "Nation Tech",
+            "title": { "fr": "Développeur sénior", "en": "Senior Developer" },
+            "startDate": "2025-02-01",
+            "endDate": "Present",
+            "location": "Montréal, Canada",
+            "description": {
+              "fr": ["Développement de technologies de gestion d'infonuage hybride et DevOps."],
+              "en": ["Development of hybrid cloud management and DevOps technologies."]
+            }
+          },
+          {
+            "client": "Northern Block",
+            "title": { "fr": "Conseiller technique", "en": "Technical Advisor" },
+            "startDate": "2024-07-01",
+            "endDate": "2024-09-01",
+            "location": "Montréal, Canada",
+            "description": {
+              "fr": ["Services de développement full stack et DevOps dans le domaine de l'identité numérique."],
+              "en": ["Full stack development and DevOps services in the digital identity space."]
+            }
+          },
+          {
+            "client": "E-SMART",
+            "title": { "fr": "Technical Consultant", "en": "Technical Consultant" },
+            "startDate": "2019-11-01",
+            "endDate": "2020-10-01",
+            "location": "Montréal, Canada",
+            "description": {
+              "fr": ["Système automatisé de mise à jour du logiciel et du micrologiciel AWS IoT Python pour un appareil IoT automobile, système de construction pour Buildroot, et maintenance de serveur sur AWS/EC2."],
+              "en": ["Automated AWS IoT Python software and firmware update system for an automotive IoT device, build system for Buildroot, and server maintenance on AWS/EC2."]
+            }
+          }
+        ]
+      },
+      {
         "title": { "fr": "Conseiller technique", "en": "Technical Advisor" },
-        "company": "Agence canadienne d'inspection des aliments",
+        "organization": "Agence canadienne d'inspection des aliments",
         "location": "Montréal, Québec, Canada",
         "startDate": "2023-04-01",
         "endDate": "2024-04-01",
@@ -115,7 +137,7 @@
       },
       {
         "title": { "fr": "CTO", "en": "CTO" },
-        "company": "The CareVoice Limited",
+        "organization": "The CareVoice Limited",
         "location": "Shanghai",
         "startDate": "2014-08-01",
         "endDate": "2015-07-01",
@@ -126,7 +148,7 @@
       },
       {
         "title": { "fr": "CTO", "en": "CTO" },
-        "company": "Letsface",
+        "organization": "Letsface",
         "location": "Shanghai, China",
         "startDate": "2013-07-01",
         "endDate": "2014-07-01",
@@ -137,7 +159,7 @@
       },
       {
         "title": { "fr": "System Architect (consultant)", "en": "System Architect (consultant)" },
-        "company": "Tradesparq.com",
+        "organization": "Tradesparq.com",
         "location": "Shanghai, China",
         "startDate": "2012-12-01",
         "endDate": "2013-07-01",
@@ -148,7 +170,7 @@
       },
       {
         "title": { "fr": "Engineering Team Lead (consultant)", "en": "Engineering Team Lead (consultant)" },
-        "company": "Transist 创思",
+        "organization": "Transist 创思",
         "location": "Shanghai, China",
         "startDate": "2013-02-01",
         "endDate": "2013-04-01",
@@ -159,7 +181,7 @@
       },
       {
         "title": { "fr": "Software Engineer in Test", "en": "Software Engineer in Test" },
-        "company": "Google China",
+        "organization": "Google China",
         "location": "Shanghai, China",
         "startDate": "2010-07-01",
         "endDate": "2011-06-01",
@@ -170,7 +192,7 @@
       },
       {
         "title": { "fr": "Software Engineer in Test", "en": "Software Engineer in Test" },
-        "company": "Google",
+        "organization": "Google",
         "location": "Mountain View, USA",
         "startDate": "2007-08-01",
         "endDate": "2010-06-01",
@@ -181,7 +203,7 @@
       },
       {
         "title": { "fr": "Expériences professionnelles antérieures (1997-2007)", "en": "Previous Professional Experience (1997-2007)" },
-        "company": "AgileDSS, Banque Nationale, UBIT, Hydro-Québec, etc.",
+        "organization": "AgileDSS, Banque Nationale, UBIT, Hydro-Québec, etc.",
         "location": "Montréal, Canada",
         "startDate": "1997-06-01",
         "endDate": "2007-08-01",
@@ -197,7 +219,7 @@
     "list": [
       {
         "title": { "fr": "Vice président", "en": "Vice President" },
-        "company": "La Console",
+        "organization": "La Console",
         "location": "Québec, Québec, Canada",
         "startDate": "2021-08-01",
         "endDate": "2022-07-01",
@@ -208,7 +230,7 @@
       },
       {
         "title": { "fr": "Co-fondateur", "en": "Co-founder" },
-        "company": "Drave Développement",
+        "organization": "Drave Développement",
         "location": "Ville de Québec, Québec, Canada",
         "startDate": "2021-01-01",
         "endDate": "2022-07-01",
@@ -219,7 +241,7 @@
       },
       {
         "title": { "fr": "Fondateur", "en": "Founder" },
-        "company": "HackAcademy.org",
+        "organization": "HackAcademy.org",
         "location": "N/A",
         "startDate": "2015-08-01",
         "endDate": "2016-08-01",
@@ -230,7 +252,7 @@
       },
       {
         "title": { "fr": "Co-fondateur, Project Generator (volontaire)", "en": "Co-founder, Project Generator (volunteer)" },
-        "company": "XinCheJian",
+        "organization": "XinCheJian",
         "location": "Shanghai, China",
         "startDate": "2010-12-01",
         "endDate": "2013-07-01",
@@ -241,7 +263,7 @@
       },
       {
         "title": { "fr": "Co-fondateur and Software Engineering Director", "en": "Co-founder and Software Engineering Director" },
-        "company": "Lophilo",
+        "organization": "Lophilo",
         "location": "Shanghai, China",
         "startDate": "2012-02-01",
         "endDate": "2013-01-01",
@@ -252,7 +274,7 @@
       },
       {
         "title": { "fr": "Capitaine, chef d'équipe logiciel", "en": "Captain, software team leader" },
-        "company": "ETS SONIA PROJECT",
+        "organization": "ETS SONIA PROJECT",
         "location": "Montreal, Canada",
         "startDate": "1999-07-01",
         "endDate": "2002-08-01",
