@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let allItems = [];
     let currentIndex = -1;
 
+    let DEBUG_SHOW_FILENAME = false; // Set to true to show filenames under photos
+
     async function loadContent() {
         const response = await fetch('index.json');
         resumeData = await response.json();
@@ -98,12 +100,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Show full resolution on hover only (no display image)
                     photoImg.addEventListener('mouseenter', (e) => showFullResHover(photoImg, photo.filename));
                     photoImg.addEventListener('mouseleave', hideFullResHover);
-                    // Display filename at the bottom
-                    const filenameDiv = document.createElement('div');
-                    filenameDiv.classList.add('timeline-photo-filename');
-                    filenameDiv.textContent = photo.filename;
+                    // Display filename at the bottom if debugging flag is set
+                    if (DEBUG_SHOW_FILENAME) {
+                        const filenameDiv = document.createElement('div');
+                        filenameDiv.classList.add('timeline-photo-filename');
+                        filenameDiv.textContent = photo.filename;
+                        photoContainer.appendChild(filenameDiv);
+                    }
                     photoContainer.appendChild(photoImg);
-                    photoContainer.appendChild(filenameDiv);
                     photosRow.appendChild(photoContainer);
                 }
             });
