@@ -72,7 +72,8 @@
               "en": ["Recruited and managed a team of developers (React, PostgreSQL, Node.js, Python). Led the development of an indoor navigation system and a gamified community."]
             }
           }
-        ]
+        ],
+        "labels": ["leadership", "consulting", "shanghai", "coderbunker"]
       },
       {
         "title": { "fr": "Fondateur & Conseiller Technique Principal", "en": "Founder & Lead Technical Advisor" },
@@ -122,7 +123,8 @@
               "en": ["Automated AWS IoT Python software and firmware update system for an automotive IoT device, build system for Buildroot, and server maintenance on AWS/EC2."]
             }
           }
-        ]
+        ],
+        "labels": ["leadership", "consulting", "montreal", "coderbunker"]
       },
       {
         "title": { "fr": "Conseiller technique", "en": "Technical Advisor" },
@@ -133,7 +135,8 @@
         "description": {
           "fr": ["Conseiller technique au laboratoire d'intelligence artificielle (CS-03). J'ai recruté et guidé une équipe de stagiaires dans le développement d'outils de recherche sémantique et de reconnaissance d'images pour les graines d'espèces envahissantes."],
           "en": ["Technical advisor at the artificial intelligence laboratory (CS-03). I recruited and guided a team of interns in developing semantic search and image recognition tools for invasive species seeds."]
-        }
+        },
+        "labels": ["technical", "consulting", "ai"]
       },
       {
         "title": { "fr": "CTO", "en": "CTO" },
@@ -144,7 +147,8 @@
         "description": {
           "fr": ["Recrutement des ressources techniques, coordination avec les équipes internes et externes pour fournir des versions régulières de la plateforme B2B. Représentation de l'entreprise auprès des investisseurs et partenaires."],
           "en": ["Recruited technical resources, coordinated with internal and external teams to deliver regular B2B platform releases. Represented the company to investors and partners."]
-        }
+        },
+        "labels": ["leadership", "shanghai", "cto", "thecarevoice"]
       },
       {
         "title": { "fr": "CTO", "en": "CTO" },
@@ -155,7 +159,8 @@
         "description": {
           "fr": ["Responsable de l'ingénierie, incluant l'embauche, la gestion, la conception, le développement de produits, les tests, la gestion de projet et l'architecture. Mise en place d'un nouveau système backend."],
           "en": ["Head of engineering, including hiring, management, design, product development, testing, project management, and architecture. Implemented a new backend system."]
-        }
+        },
+        "labels": ["leadership", "shanghai", "cto", "letsface"]
       },
       {
         "title": { "fr": "System Architect (consultant)", "en": "System Architect (consultant)" },
@@ -166,7 +171,8 @@
         "description": {
           "fr": ["Conception d'une architecture de traitement de données en temps réel et migration de Redmine vers Github."],
           "en": ["Designed a real-time data processing architecture and managed the migration from Redmine to Github."]
-        }
+        },
+        "labels": ["architecture", "consulting", "shanghai", "tradesparq"]
       },
       {
         "title": { "fr": "Engineering Team Lead (consultant)", "en": "Engineering Team Lead (consultant)" },
@@ -177,7 +183,8 @@
         "description": {
           "fr": ["Direction d'une équipe d'ingénierie pour prototyper rapidement un produit d'analyse de mots-clés en temps réel pour les réseaux sociaux."],
           "en": ["Led an engineering team to rapidly prototype a real-time keyword analysis product for social media."]
-        }
+        },
+        "labels": ["leadership", "shanghai", "consulting", "transist"]
       },
       {
         "title": { "fr": "Software Engineer in Test", "en": "Software Engineer in Test" },
@@ -188,7 +195,8 @@
         "description": {
           "fr": ["Leadership qualité pour le projet DART for Enterprise, revue des changements, amélioration des processus de développement et rédaction de documentation technique."],
           "en": ["Quality leadership for the DART for Enterprise project, reviewing changes, improving development processes, and writing technical documentation."]
-        }
+        },
+        "labels": ["quality", "shanghai", "google"]
       },
       {
         "title": { "fr": "Software Engineer in Test", "en": "Software Engineer in Test" },
@@ -199,7 +207,8 @@
         "description": {
           "fr": ["Automatisation des tests pour les applications Google, notamment pour les équipes 'TV Ads' et 'Google Analytics'. J'ai contribué à la refactorisation des utilitaires de test et à la mise en place de l'ingénierie agile."],
           "en": ["Automated testing for Google applications, notably for the 'TV Ads' and 'Google Analytics' teams. Contributed to refactoring test utilities and implementing agile engineering."]
-        }
+        },
+        "labels": ["quality", "google", "usa"]
       },
       {
         "title": { "fr": "Expériences professionnelles antérieures (1997-2007)", "en": "Previous Professional Experience (1997-2007)" },
@@ -210,7 +219,8 @@
         "description": {
           "fr": ["Durant cette décennie fondamentale à Montréal, j'ai occupé une série de rôles techniques qui ont forgé mes compétences en développement logiciel et en systèmes financiers, notamment chez AgileDSS, Banque Nationale Financière, UBIT, Hydro-Québec (IREQ), UP2 Technologies et Northern Credit Bureau. Ces expériences m'ont apporté une expertise solide en développement full-stack, en architecture système et en gestion d'infrastructures critiques."],
           "en": ["During this foundational decade in Montreal, I held a series of technical roles that forged my skills in software development and financial systems, including at AgileDSS, National Financial Bank, UBIT, Hydro-Québec (IREQ), UP2 Technologies, and Northern Credit Bureau. These experiences provided me with solid expertise in full-stack development, system architecture, and critical infrastructure management."]
-        }
+        },
+        "labels": ["development", "finance", "montreal", "agiledss"]
       }
     ]
   },
@@ -226,7 +236,8 @@
         "description": {
           "fr": ["La Console est un espace de rencontre pour les passionnés de technologie et de développement logiciel. Un lieu d'exploration, d'échange, de collaboration et d'expérimentation."],
           "en": ["La Console is a meeting space for technology and software development enthusiasts. A place for exploration, exchange, collaboration, and experimentation."]
-        }
+        },
+        "labels": ["community", "education", "console"]
       },
       {
         "title": { "fr": "Co-fondateur", "en": "Co-founder" },
@@ -237,18 +248,20 @@
         "description": {
           "fr": ["Organisme à but non-lucratif visant à répondre aux besoins numériques du Québec grâce aux données ouvertes et au logiciel libre pour atteindre la souveraineté numérique."],
           "en": ["A non-profit organization aimed at meeting Quebec's digital needs through open data and free software to achieve digital sovereignty."]
-        }
+        },
+        "labels": ["non-profit", "digital", "quebec", "drave"]
       },
       {
         "title": { "fr": "Fondateur", "en": "Founder" },
         "organization": "HackAcademy.org",
-        "location": "N/A",
+        "location": "Hong Kong",
         "startDate": "2015-08-01",
         "endDate": "2016-08-01",
         "description": {
           "fr": ["HackAcademy favorise un apprentissage pratique, continu et personnalisé à travers des hackerspaces, des fablabs et des makerspaces, axé sur la production et la création."],
           "en": ["HackAcademy promotes practical, continuous, and personalized learning through hackerspaces, fablabs, and makerspaces, focusing on production and creation."]
-        }
+        },
+        "labels": ["education", "community", "hackacademy"]
       },
       {
         "title": { "fr": "Co-fondateur, Project Generator (volontaire)", "en": "Co-founder, Project Generator (volunteer)" },
@@ -259,7 +272,8 @@
         "description": {
           "fr": ["Co-fondateur du premier Hackerspace en Chine, un espace de travail pour hackers, bricoleurs et artistes numériques. Organisation d'événements techniques et de cours."],
           "en": ["Co-founder of the first Hackerspace in China, a workspace for hackers, tinkerers, and digital artists. Organized technical events and courses."]
-        }
+        },
+        "labels": ["community", "shanghai", "xinchejian"]
       },
       {
         "title": { "fr": "Co-fondateur and Software Engineering Director", "en": "Co-founder and Software Engineering Director" },
@@ -270,7 +284,8 @@
         "description": {
           "fr": ["Création d'une nouvelle plateforme matérielle/logicielle compatible Web pour les débutants en informatique embarquée. Développement de pilotes de noyau Linux et de scripts système."],
           "en": ["Created a new web-compatible hardware/software platform for embedded computing beginners. Developed Linux kernel drivers and system scripts."]
-        }
+        },
+        "labels": ["education", "shanghai", "lophilo"]
       },
       {
         "title": { "fr": "Capitaine, chef d'équipe logiciel", "en": "Captain, software team leader" },
@@ -281,7 +296,8 @@
         "description": {
           "fr": ["Projet étudiant de robot sous-marin autonome pour la compétition internationale de l'AUVSI. Gestion d'une équipe de 5 à 20 membres et développement d'un système temps réel de 13 000 lignes."],
           "en": ["Student project of an autonomous underwater robot for the AUVSI international competition. Managed a team of 5 to 20 members and developed a 13,000-line real-time system."]
-        }
+        },
+        "labels": ["leadership", "education", "robotics", "ets", "sonia"]
       }
     ]
   },
@@ -322,6 +338,35 @@
     "title": { "fr": "Honors & Awards", "en": "Honors & Awards" },
     "list": [
       "CERTIFICATE of SPEAKERSHIP"
+    ]
+  },
+  "leisure": {
+    "title": { "fr": "Loisirs", "en": "Leisure" },
+    "list": [
+      {
+        "organization": "Shanghai Azures Underwater Hockey Club",
+        "title": { "fr": "Membre", "en": "Member" },
+        "location": "Shanghai, China",
+        "startDate": "2014-06-01",
+        "endDate": "2018-06-01",
+        "labels": ["sports", "uwh", "azures", "shanghai"],
+        "description": {
+          "fr": "Club de hockey subaquatique à Shanghai, participation régulière aux entraînements et compétitions locales.",
+          "en": "Underwater hockey club in Shanghai, regular participation in training and local competitions."
+        }
+      },
+      {
+        "organization": "CAMO Hockey Subaquatique",
+        "title": { "fr": "Membre", "en": "Member" },
+        "location": "Montréal, Canada",
+        "startDate": "2022-09-01",
+        "endDate": "Present",
+        "labels": ["sports", "uwh", "camo", "montreal"],
+        "description": {
+          "fr": "Club de hockey subaquatique à Montréal, membre actif et participant aux activités du club.",
+          "en": "Underwater hockey club in Montreal, active member and participant in club activities."
+        }
+      }
     ]
   }
 }

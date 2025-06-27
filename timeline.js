@@ -14,10 +14,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function buildTimeline(photosData) {
-        // Add a label to each item to distinguish experience and projects
-        const experiences = resumeData.experience.jobs.map(item => ({ ...item, itemType: 'experience' }));
+        // Add a label to each item to distinguish work, projects, and leisure
+        const work = resumeData.experience.jobs.map(item => ({ ...item, itemType: 'work' }));
         const projects = resumeData.projects.list.map(item => ({ ...item, itemType: 'project' }));
-        allItems = [...experiences, ...projects].sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
+        const leisure = resumeData.leisure && resumeData.leisure.list ? resumeData.leisure.list.map(item => ({ ...item, itemType: 'leisure' })) : [];
+        allItems = [...work, ...projects, ...leisure].sort((a, b) => {
+            const aEnd = a.endDate && a.endDate.toLowerCase() !== 'present' ? new Date(a.endDate) : new Date();
+            const bEnd = b.endDate && b.endDate.toLowerCase() !== 'present' ? new Date(b.endDate) : new Date();
+            if (bEnd - aEnd !== 0) return bEnd - aEnd;
+            const aStart = new Date(a.startDate);
+            const bStart = new Date(b.startDate);
+            return bStart - aStart;
+        });
 
         // Prepare photos sorted by created timestamp (ascending)
         const sortedPhotos = photosData
@@ -38,18 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
             itemDiv.style.minHeight = `${height}px`;
             itemDiv.dataset.index = index;
 
-            // Distinguish between experience and project for heading color
-            const title = document.createElement('h3');
-            title.textContent = item.title.fr; // Default to French for now
-            title.classList.add(item.itemType === 'experience' ? 'timeline-title-experience' : 'timeline-title-project');
-            itemDiv.appendChild(title);
-
-            const org = document.createElement('p');
-            const dates = formatDates(item.startDate, item.endDate, 'fr');
-            org.innerHTML = item.organization
-                ? `<strong>${item.organization}</strong> | ${item.location} | ${dates}`
-                : `${item.location} | ${dates}`;
-            itemDiv.appendChild(org);
+            // Create a flex row for logo and text
+            const headerRow = document.createElement('div');
+            headerRow.style.display = 'flex';
+            headerRow.style.alignItems = 'center';
+            headerRow.style.gap = '16px';
 
             if (item.organization) {
                 const logo = document.createElement('img');
@@ -57,8 +58,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 logo.alt = `${item.organization} Logo`;
                 logo.classList.add('logo');
                 logo.onerror = () => { logo.style.display = 'none'; };
-                itemDiv.appendChild(logo);
+                // Place logo at the start (left side)
+                headerRow.appendChild(logo);
             }
+
+            // Add text content to the right of the logo
+            const textCol = document.createElement('div');
+            const title = document.createElement('h3');
+            title.textContent = item.title.fr; // Default to French for now
+            title.classList.add(item.itemType === 'work' ? 'timeline-title-work' : item.itemType === 'project' ? 'timeline-title-project' : 'timeline-title-leisure');
+            textCol.appendChild(title);
+            const org = document.createElement('p');
+            const dates = formatDates(item.startDate, item.endDate, 'fr');
+            org.innerHTML = item.organization
+                ? `<strong>${item.organization}</strong> | ${item.location} | ${dates}`
+                : `${item.location} | ${dates}`;
+            textCol.appendChild(org);
+            headerRow.appendChild(textCol);
+            itemDiv.appendChild(headerRow);
 
             // Collect all photos for this item in a row
             const itemStart = new Date(item.startDate);
@@ -66,7 +83,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const photosRow = document.createElement('div');
             photosRow.classList.add('timeline-photos-row');
             sortedPhotos.forEach(photo => {
-                if (photo.createdDate >= itemStart && photo.createdDate <= itemEnd) {
+                if (
+                    photo.createdDate >= itemStart &&
+                    photo.createdDate <= itemEnd &&
+                    Array.isArray(photo.labels) &&
+                    photo.labels.includes(item.itemType)
+                ) {
                     const photoContainer = document.createElement('div');
                     photoContainer.classList.add('timeline-photo-container');
                     const photoImg = document.createElement('img');
